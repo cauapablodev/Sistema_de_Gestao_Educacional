@@ -4,4 +4,6 @@ out/
 !**/src/test/**/out/
 .kotlin
 .idea
+Sistema_de_Gestao_Educacional.iml
+SistemaDeGestaoEducacional.iml
 
