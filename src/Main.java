@@ -1,7 +1,3 @@
-import Aluno.Aluno;
-import Curso.Curso;
-import Professor.Professor;
-
 void main() {
     // criar aluno
     Aluno aluno = new Aluno();
