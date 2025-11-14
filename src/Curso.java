@@ -36,4 +36,10 @@ public class Curso {
     public void setCargaHoraria(int cargaHoraria) {
         this.cargaHoraria = cargaHoraria;
     }
+
+    public void detalharCurso() {
+        System.out.println("Codigo do Curso: " + codigo);
+        System.out.println("Nome do Curso: " + nome);
+        System.out.println("Carga Horaria: " + cargaHoraria + " horas");
+    }
 }
