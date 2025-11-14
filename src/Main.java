@@ -1,25 +1,14 @@
 void main() {
 
-    Aluno aluno = new Aluno();
-    aluno.criarAluno("Maria", 12345, "Engenharia");
-    aluno.criarAluno("João", 67890, "Engenharia");
-    aluno.criarAluno("Ana", 11223, "Engenharia");
+    Usuario aluno = new Aluno();
+    aluno.login = "aluno1";
+    aluno.senha = "senhaAluno";
+    Usuario professor = new Professor("professor1", "senha123", "Dr. Carlos", "Matemática", 5678);
+    Usuario administrador = new Administrador("admin123", "admin12345");
 
-    aluno.deletarAluno(12345);
-
-    Turma turma = new Turma();
-    turma.setProfessor("Dr. Silva");
-    turma.setCurso("Engenharia");
-    turma.resumoDaTurma();
-    turma.associarAvaliacaoAluno(11223, new Avaliacao("Prova Engenharia", 0 ) );
-    aluno.atribuirNota("Prova Engenharia", 8.5);
-
-    Professor professor = new Professor("Dr. Silva", "Engenharia", 98765);
-    System.out.println("Professor: " + professor.getNome() + ", Especialidade: " + professor.getEspecialidade() + ", Registro: " + professor.getRegistro());
-
-    Curso curso = new Curso(101, "Engenharia", 1200);
-    System.out.println("Curso: " + curso.getNome() + ", Codigo: " + curso.getCodigo() + ", Carga Horaria: " + curso.getCargaHoraria() + " horas");
-
+    System.out.println(aluno.autenticar("João Silva", "senhaAluno")); // false
+    System.out.println(professor.autenticar("professor1", "senha123")); // true
+    System.out.println(administrador.autenticar("admin123", "admin12345")); // true
 
 
 

@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class Aluno {
+public class Aluno extends Usuario{
     private String nome;
     private int matricula;
     private String curso;
@@ -77,6 +77,28 @@ public class Aluno {
             return false;
         }
         return avaliacao.atribuirNota(nota);
+    }
+
+    public Aluno(String nome, int matricula, String curso, Map<String, Aluno> alunoMap, Map<String, Avaliacao> avaliacoes) {
+        this.nome = nome;
+        this.matricula = matricula;
+        this.curso = curso;
+        this.alunoMap = alunoMap;
+        this.avaliacoes = avaliacoes;
+    }
+
+    public Aluno(String login, String senha, String nome, int matricula, String curso, Map<String, Aluno> alunoMap, Map<String, Avaliacao> avaliacoes) {
+        super(login, senha);
+        this.nome = nome;
+        this.matricula = matricula;
+        this.curso = curso;
+        this.alunoMap = alunoMap;
+        this.avaliacoes = avaliacoes;
+    }
+
+    @Override
+    public boolean autenticar(String login, String senha) {
+        return this.login.equals(login) && this.senha.equals(senha);//implementar autenticação do aluno
     }
 }
 
