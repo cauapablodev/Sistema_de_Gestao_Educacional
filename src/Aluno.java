@@ -7,6 +7,8 @@ public class Aluno {
     private String curso;
     //utilizando o Map para facilitar a criacao e deletar alunos por ID "Matricula"
     private Map<String, Aluno> alunoMap = new HashMap<>();
+    //map para atribuir avaliacoes ao aluno
+    private Map<String, Avaliacao> avaliacoes = new HashMap<>();
 
     public Aluno() {
 
@@ -60,6 +62,21 @@ public class Aluno {
     //metodo para deletar alunos
     public void deletarAluno (int matricula) {
         alunoMap.remove(String.valueOf(matricula));
+    }
+
+    //metodo para adicionar avaliacoes ao aluno
+    public void adicionarAvaliacao(Avaliacao avaliacao) {
+        avaliacoes.put(avaliacao.getDescricao(), avaliacao);
+    }
+
+    //atribuir nota a avaliacao do aluno
+    public boolean atribuirNota(String descricao, double nota) {
+        Avaliacao avaliacao = avaliacoes.get(descricao);
+        if  (avaliacao == null) {
+            System.out.println("Avaliacao nao encontrada para o aluno " + nome);
+            return false;
+        }
+        return avaliacao.atribuirNota(nota);
     }
 }
 

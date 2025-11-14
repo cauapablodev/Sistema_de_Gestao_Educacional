@@ -58,6 +58,21 @@ public class Turma {
         for (Aluno aluno : listaAluno) {
             System.out.println(listaAluno.size());
         }
-
     }
+
+    //associar avaliacoes a alunos
+
+    public boolean associarAvaliacaoAluno(int matricula, Avaliacao avaliacao) {
+        for (Aluno aluno : listaAluno) {
+            if (aluno.getMatricula() == matricula) {
+                aluno.adicionarAvaliacao(avaliacao);
+                System.out.println("Avaliação " + avaliacao.getDescricao() + " associada ao aluno " + aluno.getNome());
+                return true;
+            }
+        }
+        System.out.println("Aluno com matrícula " + matricula + " não encontrado na turma.");
+        return false;
+    }
+
+
 }
