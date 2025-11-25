@@ -42,4 +42,11 @@ public class Curso {
         System.out.println("Nome do Curso: " + nome);
         System.out.println("Carga Horaria: " + cargaHoraria + " horas");
     }
+
+    public void gerarRelatorio() {
+        System.out.println("Relatório do Curso:");
+        System.out.println("Código: " + codigo);
+        System.out.println("Nome: " + nome);
+        System.out.println("Carga Horária: " + cargaHoraria + " horas");
+    }
 }
