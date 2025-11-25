@@ -100,5 +100,15 @@ public class Aluno extends Usuario{
     public boolean autenticar(String login, String senha) {
         return this.login.equals(login) && this.senha.equals(senha);//implementar autenticação do aluno
     }
+
+    public void gerarRelatorio() {
+        System.out.println("Relatorio do Aluno: " + nome);
+        System.out.println("Matricula: " + matricula);
+        System.out.println("Curso: " + curso);
+        System.out.println("Avaliacoes:");
+        for (Avaliacao avaliacao : avaliacoes.values()) {
+            System.out.println("Descricao: " + avaliacao.getDescricao() + " - Nota: " + avaliacao.getNota());
+        }
+    }
 }
 

@@ -53,4 +53,10 @@ public class Professor extends Usuario{
         return this.login.equals(usuario) && this.senha.equals(senha);
     }
 
+    public void gerarRelatorio() {
+        System.out.println("Relatório do Professor:");
+        System.out.println("Nome: " + nome);
+        System.out.println("Especialidade: " + especialidade);
+        System.out.println("Registro: " + registro);
+    }
 }
