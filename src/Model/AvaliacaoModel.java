@@ -1,12 +1,14 @@
-public class Avaliacao {
+package Model;
+
+public class AvaliacaoModel {
     private double nota;
     private String descricao;
 
-    public Avaliacao() {
+    public AvaliacaoModel() {
 
     }
 
-    public Avaliacao(String descricao, double nota) {
+    public AvaliacaoModel(String descricao, double nota) {
         this.nota = nota;
         this.descricao = descricao;
     }
@@ -23,18 +25,14 @@ public class Avaliacao {
         this.descricao = descricao;
     }
 
-
-
-    //atribuir nota a avaliacao
-    public boolean atribuirNota(double nota) {
-
-        if (nota < 0 || nota > 10) {
-            System.out.println("Nota invalida. A nota deve estar entre 0 e 10.");
+    // Adicionado: permite atribuir nota com validação e retorna true se for bem-sucedido
+    public boolean setNota(double nota) {
+        if (nota < 0.0 || nota > 10.0) {
+            System.out.println("Nota inválida: " + nota + ". Deve estar entre 0 e 10.");
             return false;
         }
         this.nota = nota;
         return true;
     }
-
 
 }

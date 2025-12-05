@@ -1,12 +1,16 @@
-public abstract class Usuario implements Autenticacao{
+package Model;
+
+import Service.AutenticacaoService;
+
+public abstract class UsuarioModel implements AutenticacaoService {
     protected String login;
     protected String senha;
 
-    public Usuario() {
+    public UsuarioModel() {
 
     }
 
-    public Usuario(String login, String senha) {
+    public UsuarioModel(String login, String senha) {
         this.login = login;
         this.senha = senha;
     }
