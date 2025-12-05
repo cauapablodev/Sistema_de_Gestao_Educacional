@@ -1,13 +1,15 @@
-public class Curso {
+package Model.Curso;
+
+public class CursoModel {
     private String nome;
     private int codigo;
     private int cargaHoraria;
 
-    public Curso() {
+    public CursoModel() {
 
     }
 
-    public Curso(int codigo, String nome, int cargaHoraria) {
+    public CursoModel(int codigo, String nome, int cargaHoraria) {
         this.codigo = codigo;
         this.nome = nome;
         this.cargaHoraria = cargaHoraria;
@@ -37,16 +39,9 @@ public class Curso {
         this.cargaHoraria = cargaHoraria;
     }
 
-    public void detalharCurso() {
-        System.out.println("Codigo do Curso: " + codigo);
-        System.out.println("Nome do Curso: " + nome);
-        System.out.println("Carga Horaria: " + cargaHoraria + " horas");
-    }
-
     public void gerarRelatorio() {
-        System.out.println("Relatório do Curso:");
+        System.out.println("Relatório do Curso: " + nome);
         System.out.println("Código: " + codigo);
-        System.out.println("Nome: " + nome);
         System.out.println("Carga Horária: " + cargaHoraria + " horas");
     }
 }
